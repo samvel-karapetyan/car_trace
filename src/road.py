@@ -1,3 +1,4 @@
+import streamlit as st
 from src.line import Line # from src.line import Line
 
 
@@ -10,8 +11,8 @@ class Road:
         self.lines_count = lines_count
 
         self.road = [
-            Line(line_length=line_length, barrier_proportion=barrier_proportion) 
-            for _ in range(self.lines_count)
+            Line(id=i, line_length=line_length, barrier_proportion=barrier_proportion) 
+            for i in range(self.lines_count)
         ]
 
     def move(self):
